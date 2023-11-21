@@ -14,28 +14,34 @@ public class SpawnManager : MonoBehaviour
     private int MAS = 30;
     private float cameraLimitY = 8f;
 
+    private PlayerController PlayerControllerScript;
+
     private Vector3 spawnplace;
 
     private void Start()
     {
         InvokeRepeating("SpawnRandomObject", StartDelay, SpawnDelay);
+        PlayerControllerScript = FindObjectOfType<PlayerController>();
     }
 
   
 
     private void SpawnRandomObject()
     {
-        obstacleIndex = Random.Range(0, obstacleArray.Length);
-        objectY = Random.Range(0, cameraLimitY);
-        if (lastObject == obstacleIndex)
+        if (!PlayerControllerScript.GameOver)
         {
             obstacleIndex = Random.Range(0, obstacleArray.Length);
-        }
-        else
-        {
-            Instantiate(obstacleArray[obstacleIndex], new Vector3(30, 0, 0), Quaternion.Euler(0, 0, 0));
-            lastObject = obstacleIndex;
-            MAS--;
+            objectY = Random.Range(0, cameraLimitY);
+            if (lastObject == obstacleIndex)
+            {
+                obstacleIndex = Random.Range(0, obstacleArray.Length);
+            }
+            else
+            {
+                Instantiate(obstacleArray[obstacleIndex], new Vector3(30, 0, 0), Quaternion.Euler(0, 0, 0));
+                lastObject = obstacleIndex;
+                MAS--;
+            }
         }
     }
 }

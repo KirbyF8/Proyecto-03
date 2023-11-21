@@ -6,16 +6,26 @@ public class MoveLeft : MonoBehaviour
 {
 
     private float speed = 12f;
+    private PlayerController PlayerControllerScript;
 
-       // Update is called once per frame
+    private void Start()
+    {
+        PlayerControllerScript = FindObjectOfType<PlayerController>();
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
-
+        if (!PlayerControllerScript.GameOver)
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+        }
+        
         if (transform.position.x <= -30)
         {
-            
+            Destroy(gameObject);    
         }
+        
     }
 
 

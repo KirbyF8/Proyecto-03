@@ -657,9 +657,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnDelay: 1.5
   obstacleArray:
-  - {fileID: 1817668982258945598, guid: c41043dea705a5b458bc7185101c03ac, type: 3}
-  - {fileID: 1950317016974410211, guid: a2d971891c0d72d48a2d475e9b10d6a8, type: 3}
-  - {fileID: 6902390269289427434, guid: 8da60d4e9f0497e46818cedd97447f6c, type: 3}
+  - {fileID: 8603038995254103752, guid: da63200c37e63974a9f8b5647df2f0a2, type: 3}
+  - {fileID: 5481438869238905458, guid: 4a5a9373ec5709d4bb595b3bb2f41776, type: 3}
+  - {fileID: 2181422724421977119, guid: 9694861531090e14da246964b19df9c1, type: 3}
 --- !u!1 &1746015427
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +940,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3866589901657586851, guid: c012f33ffe8afff4f8fc744f8602d788, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5087028783492096973, guid: c012f33ffe8afff4f8fc744f8602d788, type: 3}
       propertyPath: m_Name
       value: Player
@@ -973,6 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db13619170c81824f8297d9f30c3bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOver: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
